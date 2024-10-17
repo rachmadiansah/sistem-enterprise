@@ -4,6 +4,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\EmployesController;
+use App\Http\Controllers\PayrollController;
+use App\Http\Controllers\LeaveController;
+use App\Http\Controllers\PreseceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +45,14 @@ Route::resource('roles', RoleController::class);
 Route::resource('departments', DepartmentController::class);
 
 Route::resource('employees', EmployesController::class);
+
+route::resource('payroll', PayrollController::class);
+
+Route::resource('leave', LeaveController::class);
+
+Route::resource('attendance', AttendanceController::class);
+
+
 
 
 

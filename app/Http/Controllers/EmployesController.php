@@ -9,14 +9,14 @@ use App\Models\Department;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
-class EmployeeController extends Controller
+class EmployesController extends Controller
 {
     public function index()
     {
         // Fetch employees with their related users and departments
         $employees = Employee::with(['user', 'department'])->paginate(10);
         
-        return view('admin.employee.index', compact('employee'));
+        return view('admin.Employes.index', compact('Employes'));
     }
 
     public function create()
@@ -24,7 +24,7 @@ class EmployeeController extends Controller
         $users = User::select('id', 'name')->get();
         $departments = Department::select('id', 'name')->get();
 
-        return view('admin.employee.create', compact('users', 'departments'));
+        return view('admin.employes.create', compact('users', 'departments'));
     }
 
     public function store(Request $request)
@@ -58,7 +58,7 @@ class EmployeeController extends Controller
     ]);
 
     // Redirect dengan pesan sukses
-    return redirect()->route('employee.index')->with('success', 'Employee created successfully.');
+    return redirect()->route('employes.index')->with('success', 'Employee created successfully.');
 }
 
 
